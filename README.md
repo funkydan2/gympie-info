@@ -1,2 +1,11 @@
-# gympie-info
-An Alexa skill which connects to various services to give info about Gympie, Queensland, Australia.
+# Gympie Information and News Alexa Skill
+
+This skill currently is able to play the radio and 'ministry spots' podcasts from [Cooloola Christian Radio](http://www.cooloolachristianradio.com.au)
+
+## To Do
+* Queue up the next ministry spot to start playing...
+* ~~Stream live radio from CCR~~
+* Read the 5 latest items from the Gympie Times RSS Feed
+* Read 5 events from *What's on in Gympie*.
+
+Made by Daniel Saunders
