@@ -9,7 +9,8 @@ var app = express();
 var alexaApp = new alexa.app('');
 
 //My Helper Objects
-var MSHelper = require('./ministryspot_helper');
+var MSHelper = require('./ms_podcast_helper');
+var GTHelper = require('./gt_feed_helper');
 
 const PORT = process.env.PORT || 3000;
 const ccrStream = "https://cdn.glitch.com/1fc8b6f7-74b9-4809-8bc3-886916bfcf80%2Flisten.aac.m3u?1518817626288";
@@ -31,6 +32,33 @@ alexaApp.launch(function(req, res) {
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
+alexaApp.intent('gympietimes', {
+    'slots': {},
+    'utterances': ['{what is|tell me} {the} {news}']
+  },
+  function(req, res) {
+    var newsFeed = new GTHelper();
+
+    //Since this is the first request for a sermon, get the latest episode '0'
+    return newsFeed.getArticles(5).then(function(prompt) {
+      res.say(prompt).shouldEndSession(false).send();
+    });
+  }
+);
+
+alexaApp.intent('gympietimes_headlines', {
+    'slots': {},
+    'utterances': ['{what are|tell me} {the} {headlines}']
+  },
+  function(req, res) {
+    var newsFeed = new GTHelper();
+
+    //Since this is the first request for a sermon, get the latest episode '0'
+    return newsFeed.getHeadlines(5).then(function(prompt) {
+      res.say(prompt).shouldEndSession(false).send();
+    });
+  }
+);
 
 alexaApp.intent('ministryspot', {
     'slots': {},
@@ -206,7 +234,7 @@ alexaApp.intent("AMAZON.StopIntent", {
     "utterances": []
   }, function(req, res) {
     var stopOutput = "Good bye. Thanks for using Gympie Info on Alexa.";
-    res.say(stopOutput);
+    res.audioPlayerStop().shouldEndSession(false).say(stopOutput).send();
   }
 );
 
