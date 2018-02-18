@@ -18,7 +18,8 @@
     "express": "^4.16.2",
     "ejs": "^2.5.7",
     "node-podcast-parser": "^2.0.0",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "feed-read-parser": "^0.0.6"
   },
   "keywords": [
     "alexa",
