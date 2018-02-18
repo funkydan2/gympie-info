@@ -83,7 +83,7 @@ alexaApp.intent('ministryspot', {
 
 alexaApp.intent('ccr', {
     'slots': {},
-    'utterances': ['{play|listen to} {|cooloola christian} {radio}']
+    'utterances': ['{play|listen to} {|cooloola christian|ninety one point five} {radio}']
   },
   function(req, res) {
     console.log("Playing Radio");
@@ -99,6 +99,29 @@ alexaApp.intent('ccr', {
   }
 );
 
+alexaApp.audioPlayer("PlaybackNearlyFinished", function(req, res) {
+  // async response
+  var token = req.context.AudioPlayer.token.split(":");
+  var episode = Number(token[1]);
+  var podcast = new MSHelper();
+  var nextEp, stream;
+  
+  if ( episode < 9 ) {
+    nextEp = episode + 1
+    return podcast.getEpisodeURL(nextEp).then(function(URL) {
+      stream = {
+        url: URL,
+        token: "ministryspot:" + nextEp,
+        "expectedPreviousToken": req.context.AudioPlayer.token,
+        offsetInMilliseconds: 0
+      }
+      res.audioPlayerPlayStream("ENQUEUE", stream).send();
+    })
+  }
+  else {
+    return res.audioPlayerStop().send();
+  }  
+});
 
 alexaApp.intent('AMAZON.NextIntent', {},
   function(req, res) {
