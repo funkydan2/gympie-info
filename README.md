@@ -5,6 +5,7 @@ This skill currently is able to read the news from the [Gympie Times](http://gym
 ## To Do
 * ~~Queue up the next ministry spot to start playing...~~
 * ~~Stream live radio from CCR~~
+* Play Community Notices from CCR http://www.cooloolachristianradio.com.au/Community%20Notices.mp3
 * ~~Read the 5 latest items from the Gympie Times RSS Feed~~
 * Read 5 events from *What's on in Gympie*.
 

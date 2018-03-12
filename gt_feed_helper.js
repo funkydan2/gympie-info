@@ -3,6 +3,7 @@ var parseFeed = require('feed-read-parser');
 var _ = require('lodash');
 
 const URL = "https://www.gympietimes.com.au/feeds/rss/homepage/";
+const vURL = "gympie times dot com dot a u";
 
 function getFeed(){
 	return new Promise (function (resolve, reject) {
@@ -26,14 +27,15 @@ GympieTimesHelper.prototype.getArticles = function(number){
   return getFeed().then(function(articles){
 		if (_.isUndefined(number)) { number = 1; }
     
-    var prompt = "Latest articles from the Gympie Times. <break strength='x-strong'/> ";
+    var prompt = "Latest articles from the Gympie Times.<break strength='x-strong'/>";
     
     for (var i = 0; i < number; i++) {
-      prompt += articles[i].title + " <break strength='strong'/> ";
-      prompt += articles[i].content + " <break strength='x-strong'/> ";
+      prompt += "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_short_chime_03.mp3'/>";
+      prompt += articles[i].title + "<break strength='strong'/>";
+      prompt += articles[i].content + "<break strength='x-strong'/>";
     }
-    
-    prompt += "For more information, grab a copy of the Gympie Times, or visit gympietimes.com.au.";
+    prompt += "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_short_chime_03.mp3'/>";
+    prompt += "For more information, grab a copy of the Gympie Times, or visit " + vURL;
     
     return prompt;
 	}).catch(function (error) {
@@ -47,13 +49,16 @@ GympieTimesHelper.prototype.getHeadlines = function(number){
   return getFeed().then(function(articles){
 		if (_.isUndefined(number)) { number = 1; }
     
-    var prompt = "Latest headlines from the Gympie Times. <break strength='x-strong'/>";
+    var prompt = "Latest headlines from the Gympie Times.<break strength='x-strong'/>";
     
     for (var i = 0; i < number; i++) {
-      prompt += String(i+1) + "<break />";  
-      prompt += articles[i].title + " <break strength='x-strong'/> ";
+      prompt += "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_short_chime_03.mp3'/>";
+      prompt += articles[i].title + "<break strength='x-strong'/>";      
     }
-    
+    prompt += "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_short_chime_03.mp3'/>";
+    prompt += "For more information, grab a copy of the Gympie Times, or visit " + vURL;
+
+    console.log(prompt);
     return prompt;
 	}).catch(function (error) {
       console.log('Failed', error);
