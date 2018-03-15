@@ -5,7 +5,6 @@ var express = require("express");
 var alexa = require("alexa-app");
 var app = express();
 // Setup the alexa app and attach it to express before anything else.
-//alexaApp = new alexa.app("");
 var alexaApp = new alexa.app("");
 
 //My Helper Objects
