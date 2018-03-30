@@ -78,7 +78,7 @@ alexaApp.intent(
     var podcast = new MSHelper();
 
     //Using '0' for getEpisode since we want to play the latest episode first.
-    return podcast.getEpisodeURL(1).then(function(URL) {
+    return podcast.getEpisodeURL(0).then(function(URL) {
       var bufferPrompt =
         "Getting the latest Ministry Spot." + " <break strength='x-strong'/> ";
 
