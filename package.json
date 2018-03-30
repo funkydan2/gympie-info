@@ -13,10 +13,10 @@
     "alexa-app": "^4.2.1",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^5.0.4",
+    "mocha": "^5.0.5",
     "lodash": "^4.17.5",
     "express": "^4.16.3",
-    "ejs": "^2.5.7",
+    "ejs": "^2.5.8",
     "node-podcast-parser": "^2.0.0",
     "request": "^2.85.0",
     "feed-read-parser": "^1.0.7"

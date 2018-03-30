@@ -19,15 +19,16 @@
     <main>
       <section>
         <div style="white-space:pre;border:1px solid black;margin:5px;padding:5px;font-family:monospace;">
-App: <%=JSON.stringify(app, null, 2)%>
+          <h1>App:</h1>     
+<%=JSON.stringify(app, null, 2)%>
 
-Skill Builder:
+          <h1>Skill Builder:</h1>
 <%=app.schemas.skillBuilder()%>
 <!--      Not Needed with the new Skill Builder    
-Schema:
+<h1>Schema:</h1>
 <%=schema%>
 
-Utterances:
+<h1>Utterances:</h1>
 <%=utterances%>
 -->
         </div>
