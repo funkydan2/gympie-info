@@ -17,7 +17,7 @@
     "lodash": "^4.17.5",
     "express": "^4.16.3",
     "ejs": "^2.5.8",
-    "node-podcast-parser": "^2.0.0",
+    "node-podcast-parser": "^2.1.0",
     "request": "^2.85.0",
     "feed-read-parser": "^1.0.7"
   },

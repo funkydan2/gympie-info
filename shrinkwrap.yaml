@@ -1040,7 +1040,7 @@ packages:
     resolution:
       integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 registry: 'https://registry.npmjs.org/'
-shrinkwrapMinorVersion: 4
+shrinkwrapMinorVersion: 5
 shrinkwrapVersion: 3
 specifiers:
   alexa-app: ^4.2.2
@@ -1051,5 +1051,5 @@ specifiers:
   feed-read-parser: ^1.0.7
   lodash: ^4.17.5
   mocha: ^5.0.5
-  node-podcast-parser: ^2.0.0
+  node-podcast-parser: ^2.1.0
   request: ^2.85.0
