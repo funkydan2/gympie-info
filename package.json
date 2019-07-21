@@ -10,15 +10,15 @@
   "author": "Daniel Saunders",
   "license": "MIT",
   "dependencies": {
-    "alexa-app": "^4.2.2",
-    "chai": "^4.1.2",
+    "alexa-app": "^4.2.3",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^5.2.0",
-    "lodash": "^4.17.10",
+    "mocha": "^6.2.0",
+    "lodash": "^4.17.15",
     "express": "^4.16.3",
-    "ejs": "^2.6.1",
-    "node-podcast-parser": "^2.1.0",
-    "request": "^2.87.0",
+    "ejs": "^2.6.2",
+    "node-podcast-parser": "^2.3.0",
+    "request": "^2.88.0",
     "feed-read-parser": "^1.0.7"
   },
   "keywords": [
