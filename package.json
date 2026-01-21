@@ -17,7 +17,7 @@
     "chai": "^5.1.0",
     "chai-as-promised": "^7.1.1",
     "mocha": "^10.4.0",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "express": "^4.19.2",
     "ejs": "^3.1.10",
     "node-podcast-parser": "^2.3.0",
